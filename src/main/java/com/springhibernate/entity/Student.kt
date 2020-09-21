@@ -9,7 +9,7 @@ data class Student(@Column(name = "first_name") var firstName : String?,
                    @Column(name = "email") val email : String?) {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.SEQUENCE)
     val id : Long? = null
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.REFRESH,
